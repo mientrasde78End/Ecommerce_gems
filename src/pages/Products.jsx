@@ -8,7 +8,7 @@ export default function Products() {
 
   useEffect(() => {
     api
-      .get("ecommerce/products/")
+      .get("/ecommerce/products/")
       .then((res) => setProducts(res.data))
       .catch((err) => console.error(err));
   }, []);

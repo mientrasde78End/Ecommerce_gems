@@ -13,7 +13,7 @@ export default function Register() {
     setError("");
 
     try {
-      await api.post("auth/register/", {
+      await api.post("/auth/register/", {
         username,
         password,
       });

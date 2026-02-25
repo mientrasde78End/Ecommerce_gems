@@ -18,7 +18,7 @@ export function AuthProvider({ children }) {
 
   const fetchUser = useCallback(async () => {
     try {
-      const res = await api.get("ecommerce/users/me/");
+      const res = await api.get("/ecommerce/users/me/");
       setUser(res.data);
     } catch (err) {
       logout();
@@ -37,7 +37,7 @@ export function AuthProvider({ children }) {
   }, [token, fetchUser]);
 
   async function login(username, password) {
-    const res = await api.post("auth/login/", { username, password });
+    const res = await api.post("/auth/login/", { username, password });
 
     const access = res.data.access;
 
