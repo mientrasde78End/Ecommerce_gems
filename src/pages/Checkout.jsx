@@ -50,7 +50,7 @@ export default function Checkout() {
     async function createIntent() {
       try {
         const res = await api.post(
-          "ecommerce/payments/create-payment-intent/",
+          "/ecommerce/payments/create-payment-intent/",
           { amount: 1000 },
         );
         setClientSecret(res.data.clientSecret);
