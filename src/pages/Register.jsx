@@ -18,8 +18,9 @@ export default function Register() {
         password,
       });
       navigate("/login");
-    } catch {
-      setError("Error creando la cuenta");
+    } catch (err) {
+      console.log(err.response.data);
+      setError(JSON.stringify(err.response.data));
     }
   }
 
